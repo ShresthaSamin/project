@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What's that image in your background?</title>
+  <link rel="stylesheet" href="static/website.css">
+  <style>
+    #fileInputContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Align items vertically */
+    }
+
+    #chooseFileButton {
+      margin-bottom: 10px; /* Add margin below the button */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="big-title">What's that image in your background?</h1> <!-- Big title -->
+    <h2 class="section-title">Upload Your Image To Find Out More</h2> <!-- Section title -->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <div id="fileInputContainer">
+        <input type="file" id="file" name="file" accept="image/*" multiple style="display: none;">
+        <button type="button" id="chooseFileButton">Choose File</button>
+        <div id="fileList"></div> <!-- File list container -->
+      </div>
+      <button type="submit">Upload</button>
+    </form>
+    <div id="previewContainer"></div>
+  </div>
+  <script src="static/upload.js"></script>
+</body>
+</html>
+
